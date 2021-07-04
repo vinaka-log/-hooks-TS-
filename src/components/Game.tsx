@@ -1,11 +1,19 @@
 // Game.tsx
-import React from "react";
+import React, {useState} from "react";
 import { ISquare, History } from '../interface'
 import Board from './Board'
+
 interface GameState {
   history: History[];
   stepNumber: number;
   xIsNext: boolean;
+}
+
+const Game: React.FC = () => {
+  const [history, setHistory] = useState<History>([{ squares: Array(9).fill(null)}]);
+  const [stepNumber, setStepNumber] = useState<number>(0);
+  const [xIsNext, setXIsNext] = useState<boolean>(true);
+
 }
 class Game extends React.Component<{}, GameState> {
   constructor(props: {}) {
